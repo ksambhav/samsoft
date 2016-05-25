@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: oauth2Server
+  resources:
+    chain:
+      enabled: true
+      cache: false
+server:
+  port: 9999
+  context-path: /uaa
+logging:
+  level:
+    org.springframework.security: debug
+    org.springframework.security.web.util: warn
+    org.springframework.web: warn
+security:
+  user:
+    name: admin
+    password: password
+    role:
+    - USER
+    - ADMIN
+    - ACCOUNT
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      registered-redirect-uri: http://example.com
+      client-authentication-scheme: form
+      auto-approve-scopes: openid
+      scope: openid
+      authorized-grant-types: authorization_code

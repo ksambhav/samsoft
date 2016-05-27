@@ -9,6 +9,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -41,6 +42,18 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		web
 			.ignoring()
 			.antMatchers(HttpMethod.GET, IGNORE_STATIC_RESOURCES);
+		// @formatter:on
+	}
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		// @formatter:off
+		http
+			.formLogin()
+				.loginPage("/")
+				.loginProcessingUrl("/login")
+			.and()
+				.csrf().disable();
 		// @formatter:on
 	}
 

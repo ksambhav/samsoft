@@ -15,18 +15,9 @@ logging:
     org.springframework.web: warn
 security:
   user:
-    name: admin
+    name: user
     password: password
     role:
     - USER
     - ADMIN
     - ACCOUNT
-  oauth2:
-    client:
-      client-id: acme
-      client-secret: acmesecret
-      registered-redirect-uri: http://example.com
-      client-authentication-scheme: form
-      auto-approve-scopes: openid
-      scope: openid
-      authorized-grant-types: authorization_code

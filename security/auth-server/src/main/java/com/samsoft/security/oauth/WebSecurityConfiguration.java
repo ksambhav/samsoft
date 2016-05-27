@@ -3,8 +3,12 @@
  */
 package com.samsoft.security.oauth;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -13,8 +17,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  *
  */
 @Configuration
+@Order(-20)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-
 	/**
 	 * Ignored Static resources.
 	 */
@@ -24,10 +28,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			"/**/*.html", 
 			"/**/*.less", 
 			"/**/*.css",
-			"/**/*.js" };
+			"/**/*.js","/favicon.ico" 
+		};
 	// @formatter:on
-	
-	
+
+	@Autowired
+	private AuthenticationManager authenticationManager;
+
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		// @formatter:off
@@ -35,5 +42,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.ignoring()
 			.antMatchers(HttpMethod.GET, IGNORE_STATIC_RESOURCES);
 		// @formatter:on
+	}
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.parentAuthenticationManager(authenticationManager);
 	}
 }

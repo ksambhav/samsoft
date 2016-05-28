@@ -8,7 +8,12 @@ spring:
 server:
   port: 80
 security:
+  ignored:
+    - /
+    - /**/*.js
   oauth2:
+    sso:
+      login-path: /login-samsoft
     client:
       access-token-uri: http://localhost:9999/uaa/oauth/token
       user-authorization-uri: http://localhost:9999/uaa/oauth/authorize
@@ -16,7 +21,9 @@ security:
       client-secret: acmesecret
       access-token-validity-seconds: 36000
     resource:
-      user-info-uri: http://localhost:9999/uaa/user
+      user-info-uri: /me
+      jwt:
+        key-value: sambhav
 logging:
   level:
     org.springframework.security: info

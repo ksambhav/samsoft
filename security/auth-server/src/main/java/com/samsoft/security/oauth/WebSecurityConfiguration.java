@@ -53,7 +53,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.loginPage("/")
 				.loginProcessingUrl("/login")
 			.and()
-				.requestMatchers().antMatchers("/","/login", "/oauth/authorize", "/oauth/confirm_access")
+				.requestMatchers()
+				.antMatchers("/","/login", "/oauth/authorize", "/oauth/confirm_access")
 			.and()
 				.csrf().disable();
 		// @formatter:on

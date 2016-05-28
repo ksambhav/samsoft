@@ -10,7 +10,7 @@ server:
   context-path: /uaa
 logging:
   level:
-    org.springframework.security: info
+    org.springframework.security: debug
     org.springframework.security.web.util: warn
     org.springframework.web: warn
 security:
@@ -21,3 +21,7 @@ security:
     - USER
     - ADMIN
     - ACCOUNT
+  oauth2:
+    resource:
+      jwt:
+        key-value: sambhav

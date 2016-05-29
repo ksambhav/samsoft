@@ -29,7 +29,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			"/**/*.html", 
 			"/**/*.less", 
 			"/**/*.css",
-			"/**/*.js","/favicon.ico" 
+			"/**/*.js",
+			"/index.html" 
 		};
 	// @formatter:on
 

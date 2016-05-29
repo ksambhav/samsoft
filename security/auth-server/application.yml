@@ -2,9 +2,8 @@ spring:
   application:
     name: oauth2Server
   resources:
-    chain:
-      enabled: true
-      cache: false
+    static-locations:
+    - dist/
 server:
   port: 9999
   context-path: /uaa
@@ -12,7 +11,7 @@ logging:
   level:
     org.springframework.security: debug
     org.springframework.security.web.util: warn
-    org.springframework.web: warn
+    org.springframework.web: debug
 security:
   user:
     name: user

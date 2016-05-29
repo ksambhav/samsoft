@@ -62,7 +62,7 @@
 							<arguments>install</arguments>
 						</configuration>
 					</execution>
-				<!-- 	<execution>
+					<!-- <execution>
 						<id>bower install</id>
 						<goals>
 							<goal>bower</goal>

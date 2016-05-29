@@ -5,14 +5,9 @@ spring:
     chain:
       enabled: true
       cache: false
-    static-locations:
-    - dist/
 server:
   port: 80
 security:
-  ignored:
-  - /
-  - /**/*.js
   oauth2:
     sso:
       login-path: /login-samsoft

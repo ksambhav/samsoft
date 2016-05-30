@@ -27,6 +27,10 @@
       {
         "name": "rootModule",
         "file": "root-module\\root-module.js"
+      },
+      {
+        "name": "customerModule",
+        "file": "customer-module\\customer-module.js"
       }
     ]
   }

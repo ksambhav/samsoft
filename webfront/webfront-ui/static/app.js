@@ -1,4 +1,11 @@
-angular.module('webfront', ['ui.bootstrap', 'ui.router', 'ngAnimate', 'homeModule', 'rootModule']);
+angular.module('webfront', [
+    'ui.bootstrap',
+    'ui.router',
+    'ngAnimate',
+    'homeModule',
+    'rootModule',
+    'customerModule'
+]);
 
 angular.module('webfront').config(function($stateProvider, $urlRouterProvider) {
 

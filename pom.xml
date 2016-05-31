@@ -6,12 +6,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<!-- <repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<url>http://repo.spring.io/libs-milestone-local</url>
-		</repository>
-	</repositories> -->
+	<!-- <repositories> <repository> <id>spring-milestones</id> <url>http://repo.spring.io/libs-milestone-local</url> 
+		</repository> </repositories> -->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,6 +53,11 @@
 			<artifactId>jfairy</artifactId>
 			<version>0.3.0</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -116,5 +117,6 @@
 	<modules>
 		<module>security</module>
 		<module>webfront</module>
+		<module>core</module>
 	</modules>
 </project>

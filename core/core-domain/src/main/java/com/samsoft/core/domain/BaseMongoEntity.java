@@ -24,8 +24,8 @@ import lombok.EqualsAndHashCode;
 public abstract class BaseMongoEntity implements IdAware<String> {
 
 	@Id
-	private String id;
+	protected String id;
 
 	@CreatedDate
-	private Date dateCreated;
+	protected Date dateCreated;
 }

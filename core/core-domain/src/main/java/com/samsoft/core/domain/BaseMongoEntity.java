@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * @author sambhav.jain
@@ -21,6 +22,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @Builder
 @EqualsAndHashCode(doNotUseGetters = true, of = { "id" })
+@NoArgsConstructor
 public abstract class BaseMongoEntity implements IdAware<String> {
 
 	@Id

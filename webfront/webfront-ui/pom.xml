@@ -65,29 +65,23 @@
 								</configuration>
 							</execution>
 							<execution>
-								<id>npm install</id>
+								<id>npm</id>
 								<goals>
 									<goal>npm</goal>
 								</goals>
-								<configuration>
-									<arguments>install</arguments>
-								</configuration>
 							</execution>
 							<execution>
-								<id>bower install</id>
+								<id>bower</id>
 								<goals>
 									<goal>bower</goal>
 								</goals>
-								<configuration>
-									<arguments>install</arguments>
-								</configuration>
 							</execution>
-							<execution>
-								<id>grunt build</id>
+							<!-- <execution>
+								<id>grunt</id>
 								<goals>
 									<goal>grunt</goal>
 								</goals>
-							</execution>
+							</execution> -->
 						</executions>
 					</plugin>
 				</plugins>

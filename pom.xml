@@ -118,5 +118,6 @@
 		<module>security</module>
 		<module>webfront</module>
 		<module>core</module>
+		<module>crm</module>
 	</modules>
 </project>

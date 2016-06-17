@@ -20,11 +20,16 @@ public interface CustomerProfileService {
 
 	CustomerProfile findById(String id);
 
-	CustomerProfile upsert(CustomerProfile customerProfile);
+	CustomerProfile save(CustomerProfile customerProfile);
+	
+	
+	List<CustomerProfile> save(List<CustomerProfile> customerProfiles);
 
 	int addEyePrescription(String customerId, EyePrescription prescription);
 
 	int removeEyePrescription(String customerId, String prescriptionId);
 
 	boolean deleteCustomer(String customerId);
+
+	List<CustomerProfile> findAll();
 }

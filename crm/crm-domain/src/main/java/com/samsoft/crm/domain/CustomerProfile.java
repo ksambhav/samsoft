@@ -8,11 +8,13 @@ import java.util.SortedSet;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.samsoft.core.domain.TenantAwareBaseMongoEntity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -23,7 +25,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@EqualsAndHashCode(doNotUseGetters=true,callSuper=true)
+@JsonInclude(value=Include.NON_NULL)
 public class CustomerProfile extends TenantAwareBaseMongoEntity<String> {
 
 	public static interface PROPS {

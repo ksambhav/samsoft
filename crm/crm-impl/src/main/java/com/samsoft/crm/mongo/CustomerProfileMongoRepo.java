@@ -12,7 +12,5 @@ import com.samsoft.crm.domain.CustomerProfile;
  *
  */
 public interface CustomerProfileMongoRepo extends MongoRepository<CustomerProfile, String> {
-
 	CustomerProfile findByMobile(String mobile);
-
 }

@@ -42,12 +42,13 @@ public class CustomerServiceMongoImpl implements CustomerProfileService {
 	@Override
 	public List<CustomerProfile> textSearchByName(String inputName) {
 
-		TextCriteria criteria = TextCriteria.forDefaultLanguage().matching(inputName);
+		TextCriteria criteria = TextCriteria.forDefaultLanguage().matchingAny(inputName.split(" "));
 		// @formatter:off
 		Query query = TextQuery
 						.queryText(criteria)
 						.addCriteria(Criteria.where("tenant").is("test"))
-						.limit(10);
+						.limit(50);
+		query.fields().include(CustomerProfile.PROPS.FULL_NAME).include(CustomerProfile.PROPS.MOBILE);
 		
 		//@formatter:on
 		return mongoTemplate.find(query, CustomerProfile.class);
@@ -83,7 +84,7 @@ public class CustomerServiceMongoImpl implements CustomerProfileService {
 	 * CustomerProfile)
 	 */
 	@Override
-	public CustomerProfile upsert(CustomerProfile customerProfile) {
+	public CustomerProfile save(CustomerProfile customerProfile) {
 		return customerRepo.save(customerProfile);
 	}
 
@@ -137,6 +138,16 @@ public class CustomerServiceMongoImpl implements CustomerProfileService {
 		customerProfile.setId(customerId);
 		customerRepo.delete(customerProfile);
 		return true;
+	}
+
+	@Override
+	public List<CustomerProfile> save(List<CustomerProfile> customerProfiles) {
+		return customerRepo.save(customerProfiles);
+	}
+
+	@Override
+	public List<CustomerProfile> findAll() {
+		return customerRepo.findAll();
 	}
 
 }

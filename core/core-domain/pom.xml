@@ -14,5 +14,10 @@
 			<artifactId>spring-data-mongodb</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>

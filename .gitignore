@@ -21,3 +21,4 @@ node/
 .npm
 *.factorypath
 npm-debug.log
+.vscode

@@ -12,5 +12,6 @@
   	<module>crm-domain</module>
   	<module>crm-api</module>
   	<module>crm-impl</module>
+  	<module>crm-web</module>
   </modules>
 </project>

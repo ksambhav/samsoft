@@ -28,7 +28,7 @@ public class EyePrescription implements Comparable<EyePrescription> {
 	@AllArgsConstructor
 	@NoArgsConstructor
 	public static final class Prescription {
-
+		
 		protected float sph;
 		protected float cyl;
 		protected short axis;

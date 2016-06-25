@@ -13,34 +13,10 @@
 			<artifactId>core-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-
-
-
-
-
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 			<scope>provided</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.1.0.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>
-				spring-boot-starter-cloud-connectors
-			</artifactId>
 		</dependency>
 	</dependencies>
 </project>

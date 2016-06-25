@@ -6,6 +6,8 @@ package com.samsoft.crm.mongo;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -145,9 +147,11 @@ public class CustomerServiceMongoImpl implements CustomerProfileService {
 		return customerRepo.save(customerProfiles);
 	}
 
+	
+	
 	@Override
-	public List<CustomerProfile> findAll() {
-		return customerRepo.findAll();
+	public Page<CustomerProfile> findAll(Pageable pageRequest) {
+		return customerRepo.findAll(pageRequest);
 	}
 
 }

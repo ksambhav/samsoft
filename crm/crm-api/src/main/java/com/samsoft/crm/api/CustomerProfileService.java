@@ -5,6 +5,9 @@ package com.samsoft.crm.api;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.samsoft.crm.domain.CustomerProfile;
 import com.samsoft.crm.domain.EyePrescription;
 
@@ -21,8 +24,7 @@ public interface CustomerProfileService {
 	CustomerProfile findById(String id);
 
 	CustomerProfile save(CustomerProfile customerProfile);
-	
-	
+
 	List<CustomerProfile> save(List<CustomerProfile> customerProfiles);
 
 	int addEyePrescription(String customerId, EyePrescription prescription);
@@ -31,5 +33,5 @@ public interface CustomerProfileService {
 
 	boolean deleteCustomer(String customerId);
 
-	List<CustomerProfile> findAll();
+	Page<CustomerProfile> findAll(Pageable pageRequest);
 }

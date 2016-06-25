@@ -22,3 +22,4 @@ node/
 *.factorypath
 npm-debug.log
 .vscode
+test-output

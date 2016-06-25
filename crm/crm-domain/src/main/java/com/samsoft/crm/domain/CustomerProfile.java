@@ -5,6 +5,10 @@ package com.samsoft.crm.domain;
 
 import java.util.SortedSet;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
@@ -25,8 +29,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(doNotUseGetters=true,callSuper=true)
-@JsonInclude(value=Include.NON_NULL)
+@EqualsAndHashCode(doNotUseGetters = true, callSuper = true)
+@JsonInclude(value = Include.NON_NULL)
 public class CustomerProfile extends TenantAwareBaseMongoEntity<String> {
 
 	public static interface PROPS {
@@ -36,12 +40,15 @@ public class CustomerProfile extends TenantAwareBaseMongoEntity<String> {
 	}
 
 	@TextIndexed
+	@NotEmpty
 	protected String fullName;
 
 	@Indexed(background = false, unique = true)
+	@Pattern(regexp = "\\d{10}")
 	protected String mobile;
 	protected String address;
 
+	@Valid
 	protected SortedSet<EyePrescription> eyePrescripition;
 
 }

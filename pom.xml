@@ -14,7 +14,7 @@
 		<java.version>1.8</java.version>
 		<spring.boot.version>1.3.4.RELEASE</spring.boot.version>
 		<spring.cloud.version>Brixton.RELEASE</spring.cloud.version>
-		<hibernate.validator.version>5.2.2.Final</hibernate.validator.version>
+		<hibernate.validator.version>5.2.4.Final</hibernate.validator.version>
 	</properties>
 
 	<dependencyManagement>
@@ -46,6 +46,18 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8.13</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -94,6 +106,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
